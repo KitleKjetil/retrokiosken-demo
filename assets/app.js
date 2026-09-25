@@ -43,6 +43,14 @@ const PRODUKTER = [
     tekst: 'Game Boy Color i turkis. Rengjort innvendig, kontaktene er vasket, og lyden er sterk og klar.' },
   { id: 'ds-lite', tittel: 'Nintendo DS Lite – hvit', type: 'konsoll-ds', kat: ['konsoll', 'ds'], pris: 790, stand: 'God', region: 'PAL', innhold: 'Konsoll + lader', farge: '#e9e9ec', label: '',
     tekst: 'Spiller både DS- og GBA-spill. Små riper på lokket, begge skjermer uten døde piksler.' },
+  { id: 'gba-ips-lilla', tittel: 'Game Boy Advance med IPS-skjerm – klar lilla', type: 'konsoll-gba', kat: ['konsoll', 'gba'], pris: 1890, stand: 'Veldig god', region: 'PAL', innhold: 'Kun konsoll', farge: '#7b6fd6', label: '', modd: true, nytt: true,
+    tekst: 'Original Game Boy Advance oppgradert med lys, bakbelyst IPS-skjerm og nytt gjennomsiktig skall (ettermarkedsdeler). Prøvespilt etter ombyggingen. Bruker 2 AA-batterier.' },
+  { id: 'r36s', tittel: 'R36S – håndholdt retrokonsoll', type: 'r36', kat: ['konsoll'], pris: 699, stand: 'Ny', region: '–', innhold: 'Konsoll, USB-C-kabel', farge: '#1e2340', label: '', nytt: true,
+    tekst: 'Populær håndholdt retrokonsoll med 3,5" IPS-skjerm og to analoge styrespaker. Levert med operativsystem ferdig installert og satt opp. Selges uten forhåndsinstallerte spill.' },
+  { id: 'anbernic-rg35xx-sp', tittel: 'Anbernic RG35XX SP', type: 'konsoll-sp', kat: ['konsoll'], pris: 1099, stand: 'Ny', region: '–', innhold: 'Konsoll, USB-C-kabel', farge: '#8a8f99', label: '',
+    tekst: 'Klappbar håndholdt i klassisk stil fra Anbernic, med 3,5" IPS-skjerm og god batteritid. Selges uten forhåndsinstallerte spill.' },
+  { id: 'miyoo-mini-plus', tittel: 'Miyoo Mini Plus', type: 'konsoll-gbc', kat: ['konsoll'], pris: 899, stand: 'Ny', region: '–', innhold: 'Konsoll, USB-C-kabel', farge: '#d9d9de', label: '',
+    tekst: 'Liten og lett håndholdt fra Miyoo med lang batteritid – passer i lomma. Selges uten forhåndsinstallerte spill.' },
   { id: 'lader-gba-sp', tittel: 'Lader til GBA SP / DS', type: 'lader', kat: ['tilbehor'], pris: 149, stand: 'Ny', region: '–', innhold: 'Lader', farge: '#1e2340', label: '',
     tekst: 'Ny lader som passer Game Boy Advance SP og den første Nintendo DS-en.' },
   { id: 'etui-kassetter', tittel: 'Oppbevaringsetui for 12 kassetter', type: 'etui', kat: ['tilbehor'], pris: 99, stand: 'Ny', region: '–', innhold: 'Etui', farge: '#d6352b', label: '',
@@ -113,6 +121,14 @@ function produktSvg(p) {
         <rect x="72" y="112" width="56" height="44" fill="#1e2340"/><rect x="76" y="116" width="48" height="36" fill="#9bbc0f"/>
         <rect x="55" y="130" width="12" height="4" fill="#1e2340"/><rect x="59" y="126" width="4" height="12" fill="#1e2340"/>
         <circle cx="140" cy="128" r="3.5" fill="#1e2340"/><circle cx="140" cy="140" r="3.5" fill="#1e2340"/>`;
+      break;
+    case 'r36':
+      art = `<rect x="58" y="18" width="84" height="164" rx="12" fill="${p.farge}" stroke="#1e2340" stroke-width="3"/>
+        <rect x="66" y="28" width="68" height="54" rx="3" fill="#0e1122"/><rect x="70" y="32" width="60" height="46" fill="#6fc3df"/>
+        <rect x="70" y="96" width="18" height="6" fill="#8a8f99"/><rect x="76" y="90" width="6" height="18" fill="#8a8f99"/>
+        <circle cx="120" cy="92" r="4" fill="#d6352b"/><circle cx="128" cy="100" r="4" fill="#f2b632"/><circle cx="112" cy="100" r="4" fill="#9bbc0f"/><circle cx="120" cy="108" r="4" fill="#6fc3df"/>
+        <circle cx="80" cy="140" r="11" fill="#0e1122"/><circle cx="80" cy="140" r="6" fill="#55556a"/>
+        <circle cx="120" cy="140" r="11" fill="#0e1122"/><circle cx="120" cy="140" r="6" fill="#55556a"/>`;
       break;
     case 'lader':
       art = `<rect x="70" y="50" width="60" height="60" rx="8" fill="${p.farge}" stroke="#1e2340" stroke-width="3"/>
@@ -185,7 +201,7 @@ function header() {
   }).join('');
   return `
   <div class="demo">Demoside – ikke en ekte butikk. Varer og priser er oppdiktet.</div>
-  <div class="kunngjoring" id="kunngjoring">Alle spill er testet og garantert ekte</div>
+  <div class="kunngjoring" id="kunngjoring">Alle spill er sjekket og prøvespilt</div>
   <header class="header">
     <div class="wrap header__inner">
       <button class="ikonknapp meny-knapp" aria-label="Meny" aria-expanded="false" aria-controls="hovedmeny">
@@ -207,7 +223,7 @@ function footer() {
     <div class="wrap">
       <div class="footer__grid">
         <div><img src="assets/retrokiosken-logo-mork.svg" alt="Retrokiosken" width="475" height="96">
-          <p>Originale retrospill og håndholdte konsoller – sjekket for ekthet og prøvespilt før de sendes.</p></div>
+          <p>Retrospill, håndholdte konsoller og tilbehør – sjekket og prøvespilt før de sendes.</p></div>
         <div><h3>Butikken</h3><ul>
           <li><a href="spill.html">Alle varer</a></li><li><a href="spill.html?k=pokemon">Pokémon</a></li>
           <li><a href="spill.html?k=konsoll">Konsoller</a></li><li><a href="slik-tester-vi.html">Slik tester vi</a></li>
@@ -297,8 +313,12 @@ function produktside() {
   document.title = `${p.tittel} – Retrokiosken (demo)`;
   const hoved = p.kat.find((x) => x !== 'pokemon');
   const erSpill = ['gb', 'gbc', 'gba', 'ds'].includes(p.type);
-  const sjekk = erSpill
-    ? ['Sjekket for ekthet', 'Prøvespilt på ekte maskinvare', p.batteri ? 'Nytt lagringsbatteri' : 'Lagring testet']
+  const sjekk = p.modd
+    ? ['Original konsoll, sjekket for ekthet', 'Ny IPS-skjerm og nytt skall (ettermarkedsdeler)', 'Prøvespilt etter ombygging']
+    : p.stand === 'Ny' && p.kat.includes('konsoll')
+      ? ['Ny vare', 'Testet før sending', 'Selges uten forhåndsinstallerte spill']
+    : erSpill
+    ?['Sjekket for ekthet', 'Prøvespilt på ekte maskinvare', p.batteri ? 'Nytt lagringsbatteri' : 'Lagring testet']
     : p.type.startsWith('konsoll')
       ? ['Sjekket for ekthet', 'Prøvespilt – knapper, lyd og skjerm', 'Batteri og lading testet']
       : ['Ny vare', 'Kontrollert før sending'];
@@ -346,7 +366,7 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('[data-demo]')) { e.preventDefault(); toast('Denne siden kommer i den ekte butikken.'); }
 });
 
-const meldinger = ['Alle spill er testet og garantert ekte', 'Rask levering med Posten og PostNord', 'Spesialister på Game Boy, GBA og Pokémon'];
+const meldinger = ['Alle spill er sjekket og prøvespilt', 'Rask levering med Posten og PostNord', 'Spesialister på Game Boy, GBA og Pokémon'];
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   let i = 0;
   setInterval(() => { i = (i + 1) % meldinger.length; document.getElementById('kunngjoring').textContent = meldinger[i]; }, 4000);
