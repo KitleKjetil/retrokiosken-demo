@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrokiosken – retrospill som faktisk virker (demo)</title>
+  <meta name="description" content="Demoside for Retrokiosken – originale Game Boy-, GBA- og DS-spill, testet og garantert ekte.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Retrokiosken (demo)">
+  <meta property="og:image" content="assets/deling.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/retrokiosken-favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="assets/retrokiosken-ikon.svg">
+  <link rel="apple-touch-icon" href="assets/retrokiosken-apple-touch-icon.png">
+  <link rel="preload" href="assets/PixelifySans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-side="forside">
+  <div id="topp"></div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div>
+          <p class="hero__etikett">Testet · Ekte · Klar til å spilles</p>
+          <h1>Retrospill som <span>faktisk virker.</span></h1>
+          <p class="hero__tekst">Originale Game Boy-, GBA- og DS-spill – sjekket for ekthet, rengjort og testet på ekte maskinvare før de sendes til deg.</p>
+          <div class="hero__knapper">
+            <a class="knapp knapp--gul" href="spill.html">Se alle spill</a>
+            <a class="knapp knapp--kontur" href="spill.html?k=konsoll">Håndholdte konsoller</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <div class="hero__ikon"><img src="assets/retrokiosken-ikon.svg" alt="" width="320" height="320"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fordeler" aria-label="Hvorfor handle hos oss">
+      <ul class="wrap">
+        <li><span data-ikon="check"></span><span><strong>Alt er testet</strong><small>På original maskinvare</small></span></li>
+        <li><span data-ikon="shield"></span><span><strong>Garantert ekte</strong><small>Ingen kopier eller repro</small></span></li>
+        <li><span data-ikon="truck"></span><span><strong>Rask levering</strong><small>Med Posten eller PostNord</small></span></li>
+        <li><span data-ikon="gamepad"></span><span><strong>Spesialister</strong><small>Game Boy, GBA og DS</small></span></li>
+      </ul>
+    </section>
+
+    <section class="plattformer">
+      <div class="wrap">
+        <h2 class="seksjonstittel">Handle etter konsoll</h2>
+        <ul class="fliser">
+          <li><a class="flis flis--gronn" href="spill.html?k=gb"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Game Boy</span><span class="flis__antall" data-antall="gb"></span></a></li>
+          <li><a class="flis flis--lilla" href="spill.html?k=gba"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Game Boy Advance</span><span class="flis__antall" data-antall="gba"></span></a></li>
+          <li><a class="flis flis--bla" href="spill.html?k=ds"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Nintendo DS</span><span class="flis__antall" data-antall="ds"></span></a></li>
+          <li><a class="flis flis--rod" href="spill.html?k=pokemon"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Pokémon</span><span class="flis__antall" data-antall="pokemon"></span></a></li>
+          <li><a class="flis flis--gul" href="spill.html?k=konsoll"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Håndholdte</span><span class="flis__antall" data-antall="konsoll"></span></a></li>
+          <li><a class="flis flis--krem" href="spill.html?k=tilbehor"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Tilbehør</span><span class="flis__antall" data-antall="tilbehor"></span></a></li>
+          <li><a class="flis flis--bla" href="spill.html"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Alle varer</span><span class="flis__antall">Hele kiosken</span></a></li>
+          <li><a class="flis flis--gul" href="spill.html?sort=nyest"><span class="flis__pil" aria-hidden="true">→</span><span class="flis__navn">Nyheter</span><span class="flis__antall">Sist inn i kiosken</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="produkter">
+      <div class="wrap">
+        <div class="produkter__topp"><h2 class="seksjonstittel">Nytt i kiosken</h2><a href="spill.html">Se alle →</a></div>
+        <ul class="grid" id="nytt"></ul>
+      </div>
+    </section>
+
+    <section class="steg" id="slik-tester-vi">
+      <div class="wrap">
+        <h2 class="seksjonstittel">Slik tester vi hvert spill</h2>
+        <p class="steg__intro">Det finnes mange falske Pokémon-kassetter der ute. Derfor går alt vi selger gjennom de samme fire stegene før det havner i kiosken.</p>
+        <ol>
+          <li><span class="steg__nr" aria-hidden="true">01</span><span data-ikon="search"></span><h3>Ekthetssjekk</h3><p>Vi åpner kassetten og sjekker kretskort, brikker og etikett mot originalen.</p></li>
+          <li><span class="steg__nr" aria-hidden="true">02</span><span data-ikon="spray"></span><h3>Rengjøring</h3><p>Kontaktene renses med isopropanol, og kassetten tørkes av utvendig.</p></li>
+          <li><span class="steg__nr" aria-hidden="true">03</span><span data-ikon="gamepad"></span><h3>Spilltest</h3><p>Spillet testes på original Nintendo-maskinvare – lyd, bilde og kontroller.</p></li>
+          <li><span class="steg__nr" aria-hidden="true">04</span><span data-ikon="save"></span><h3>Lagring</h3><p>Vi lagrer, slår av og på igjen. Døde batterier byttes før salg.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="nyhetsbrev">
+      <div class="wrap nyhetsbrev__inner">
+        <div>
+          <h2 class="seksjonstittel">Bli med i kioskklubben</h2>
+          <p>Få beskjed først når sjeldne Pokémon-spill og nye konsoller kommer inn.</p>
+        </div>
+        <div>
+          <form id="nyhetsbrev" novalidate>
+            <label class="visually-hidden" for="nb-epost">E-post</label>
+            <input id="nb-epost" type="email" placeholder="Din e-post" autocomplete="email" required>
+            <button class="knapp" type="submit">Meld meg på</button>
+          </form>
+          <p class="nyhetsbrev__svar" id="nb-svar" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="bunn"></div>
+  <script src="assets/app.js"></script>
+  <script>document.querySelectorAll('[data-ikon]').forEach((el) => { el.outerHTML = ikon(el.dataset.ikon); });</script>
+</body>
+</html>

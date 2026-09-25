@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alle varer – Retrokiosken (demo)</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/retrokiosken-favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="assets/retrokiosken-ikon.svg">
+  <link rel="preload" href="assets/PixelifySans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-side="spill">
+  <div id="topp"></div>
+
+  <main>
+    <div class="sidetopp">
+      <div class="wrap">
+        <h1 id="kol-tittel">Alle varer</h1>
+        <p>Alt er testet, rengjort og sjekket for ekthet.</p>
+      </div>
+    </div>
+
+    <section class="produkter">
+      <div class="wrap">
+        <div class="filtre" id="filtre" role="group" aria-label="Filtrer etter kategori"></div>
+        <div class="verktoy">
+          <span id="antall" aria-live="polite"></span>
+          <label>Sorter:
+            <select id="sorter">
+              <option value="standard">Utvalgt</option>
+              <option value="nyest">Nyeste først</option>
+              <option value="pris-opp">Pris: lav til høy</option>
+              <option value="pris-ned">Pris: høy til lav</option>
+            </select>
+          </label>
+        </div>
+        <ul class="grid" id="grid"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="bunn"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
