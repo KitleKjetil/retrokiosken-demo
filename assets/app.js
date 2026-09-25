@@ -176,6 +176,7 @@ function header() {
     ['spill.html', 'Alle varer', 'spill'],
     ['spill.html?k=gb', 'Game Boy'], ['spill.html?k=gba', 'GBA'], ['spill.html?k=ds', 'DS'],
     ['spill.html?k=pokemon', 'Pokémon'], ['spill.html?k=konsoll', 'Konsoller'], ['spill.html?k=tilbehor', 'Tilbehør'],
+    ['om-oss.html', 'Om oss'],
   ];
   const q = new URLSearchParams(location.search).get('k');
   const nav = lenker.map(([href, navn]) => {
@@ -209,8 +210,10 @@ function footer() {
           <p>Originale retrospill og håndholdte konsoller – sjekket for ekthet, rengjort og testet før de sendes.</p></div>
         <div><h3>Butikken</h3><ul>
           <li><a href="spill.html">Alle varer</a></li><li><a href="spill.html?k=pokemon">Pokémon</a></li>
-          <li><a href="spill.html?k=konsoll">Konsoller</a></li><li><a href="index.html#slik-tester-vi">Slik tester vi</a></li></ul></div>
+          <li><a href="spill.html?k=konsoll">Konsoller</a></li><li><a href="slik-tester-vi.html">Slik tester vi</a></li>
+          <li><a href="om-oss.html">Om oss</a></li></ul></div>
         <div><h3>Kundeservice</h3><ul>
+          <li><a href="faq.html">Spørsmål og svar</a></li>
           <li><a href="#" data-demo>Frakt og levering</a></li><li><a href="#" data-demo>Retur og angrerett</a></li>
           <li><a href="#" data-demo>Kontakt oss</a></li><li><a href="#" data-demo>Personvern</a></li></ul></div>
       </div>

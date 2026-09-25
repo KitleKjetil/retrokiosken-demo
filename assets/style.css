@@ -72,7 +72,7 @@ h1, h2, h3 { font-family: var(--pixel); font-weight: 500; margin: 0; line-height
 .header__inner { display: flex; align-items: center; gap: 32px; padding-block: 12px; }
 .header__logo img { height: 46px; width: auto; }
 .header nav { display: flex; gap: 22px; flex: 1; }
-.header nav a { text-decoration: none; font-weight: 500; font-size: 0.95rem; padding-block: 6px; border-bottom: 2px solid transparent; }
+.header nav a { white-space: nowrap; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding-block: 6px; border-bottom: 2px solid transparent; }
 .header nav a:hover, .header nav a[aria-current='page'] { border-bottom-color: var(--rod); }
 .header__handling { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 .ikonknapp { position: relative; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 8px; border: 0; background: transparent; color: var(--bla); cursor: pointer; text-decoration: none; }
@@ -82,7 +82,7 @@ h1, h2, h3 { font-family: var(--pixel); font-weight: 500; margin: 0; line-height
 .kurv-antall[hidden] { display: none; }
 .meny-knapp { display: none; }
 
-@media (max-width: 849px) {
+@media (max-width: 1099px) {
   .header__inner { gap: 12px; }
   .header__logo img { height: 34px; }
   .meny-knapp { display: grid; }
@@ -243,6 +243,25 @@ h1, h2, h3 { font-family: var(--pixel); font-weight: 500; margin: 0; line-height
 .lager::before { content: ''; width: 10px; height: 10px; border-radius: 2px; background: #2e8b57; }
 .beskrivelse { line-height: 1.7; }
 @media (max-width: 849px) { .produkt { grid-template-columns: 1fr; gap: 28px; } .egenskaper { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- Tekstsider (Om oss, Slik tester vi, FAQ) ---------- */
+.tekstside { max-width: calc(760px + var(--marg) * 2); padding-block: 48px 72px; font-size: 1.05rem; line-height: 1.7; }
+.tekstside h2 { font-size: 1.6rem; margin: 40px 0 12px; }
+.tekstside p, .tekstside ul { margin: 0 0 14px; }
+.tekstside ul { padding-left: 1.2em; }
+.tekstside li { margin-bottom: 6px; }
+.tekstside .ingress { font-size: 1.2rem; line-height: 1.6; padding: 18px 22px; background: #fff; border-left: 6px solid var(--rod); border-radius: 0; }
+.tekstside .verdier { list-style: none; padding: 0; display: grid; gap: 12px; }
+.tekstside .verdier li { background: #fff; border: 2px solid var(--bla); border-radius: 10px; padding: 14px 18px; box-shadow: 3px 3px 0 var(--bla); }
+.tekstside table { width: 100%; border-collapse: collapse; background: #fff; margin: 8px 0 16px; font-size: 0.95rem; }
+.tekstside th, .tekstside td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--kant); }
+.tekstside th { background: var(--bla); color: var(--krem); font-weight: 600; }
+.tekstside details { background: #fff; border: 2px solid var(--bla); border-radius: 10px; margin-bottom: 10px; }
+.tekstside summary { cursor: pointer; padding: 14px 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.tekstside summary::-webkit-details-marker { display: none; }
+.tekstside summary::after { content: '+'; font: 500 1.4rem/1 var(--pixel); color: var(--rod); }
+.tekstside details[open] summary::after { content: '–'; }
+.tekstside details p { padding: 0 18px 16px; margin: 0; }
 
 /* ---------- Toast ---------- */
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 140%); background: var(--bla); color: var(--krem); padding: 14px 20px; border-radius: 8px; box-shadow: 4px 4px 0 var(--gul); font-size: 0.95rem; transition: transform 200ms ease; z-index: 50; max-width: calc(100% - 32px); }
