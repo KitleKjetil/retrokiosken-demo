@@ -177,13 +177,12 @@ h1, h2, h3 { font-family: var(--pixel); font-weight: 500; margin: 0; line-height
 /* ---------- Slik tester vi ---------- */
 .steg { padding-block: 64px; }
 .steg__intro { max-width: 40em; margin: -12px 0 32px; font-size: 1.05rem; line-height: 1.6; }
-.steg ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; }
+.steg ol { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 0; padding: 0; list-style: none; }
 .steg li { position: relative; padding: 22px 20px; border: 2px solid var(--bla); border-radius: 12px; background: #fff; }
 .steg__nr { position: absolute; top: 14px; right: 16px; font: 500 1.6rem var(--pixel); color: var(--rod); }
 .steg h3 { margin: 16px 0 6px; font-size: 1.25rem; }
 .steg p { margin: 0; font-size: 0.95rem; line-height: 1.55; }
 .steg .pikselikon { width: 48px; height: 48px; }
-@media (max-width: 989px) { .steg ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .steg ol { grid-template-columns: 1fr; } .steg { padding-block: 44px; } }
 
 /* ---------- Nyhetsbrev ---------- */

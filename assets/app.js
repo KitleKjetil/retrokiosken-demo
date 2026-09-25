@@ -24,13 +24,13 @@ const PRODUKTER = [
   { id: 'mario-kart-super-circuit', tittel: 'Mario Kart: Super Circuit', type: 'gba', kat: ['gba'], pris: 349, stand: 'God', region: 'PAL', innhold: 'Løs kassett', farge: '#e5801a', label: 'KART',
     tekst: 'Klassisk Mario Kart i lomma, med alle SNES-banene som bonus.' },
   { id: 'pokemon-crystal', tittel: 'Pokémon Crystal', type: 'gbc', kat: ['gb', 'pokemon'], pris: 1290, stand: 'Veldig god', region: 'PAL', innhold: 'Løs kassett', farge: '#6fc3df', label: 'CRYSTAL', batteri: true, nytt: true,
-    tekst: 'Den gjennomsiktige blå kassetten mange samler på. Nytt lagringsbatteri er loddet inn, og spillet er testet fra start.' },
+    tekst: 'Den gjennomsiktige blå kassetten mange samler på. Nytt lagringsbatteri, og spillet er prøvespilt fra start.' },
   { id: 'pokemon-gold', tittel: 'Pokémon Gold', type: 'gbc', kat: ['gb', 'pokemon'], pris: 690, stand: 'God', region: 'PAL', innhold: 'Løs kassett', farge: '#d4a017', label: 'GOLD', batteri: true,
     tekst: 'Johto og Kanto i ett spill. Nytt lagringsbatteri montert – lagrer og husker tiden igjen.' },
   { id: 'pokemon-yellow', tittel: 'Pokémon Yellow', type: 'gb', kat: ['gb', 'pokemon'], pris: 590, stand: 'Brukt', region: 'PAL', innhold: 'Løs kassett', farge: '#f2d024', label: 'YELLOW',
     tekst: 'Pikachu følger deg gjennom hele Kanto. Etiketten har tydelige bruksspor, men spillet og lagringen fungerer perfekt.' },
   { id: 'tetris', tittel: 'Tetris', type: 'gb', kat: ['gb'], pris: 99, stand: 'God', region: 'PAL', innhold: 'Løs kassett', farge: '#7a7a7a', label: 'TETRIS',
-    tekst: 'Spillet som solgte Game Boy. Testet og rengjort.' },
+    tekst: 'Spillet som solgte Game Boy. Sjekket og prøvespilt.' },
   { id: 'pokemon-heartgold', tittel: 'Pokémon HeartGold – komplett', type: 'ds', kat: ['ds', 'pokemon'], pris: 1990, stand: 'Som ny', region: 'PAL', innhold: 'Eske, manual, spill', farge: '#c89b1c', label: 'HEARTGOLD', nytt: true,
     tekst: 'Komplett i eske med manual. Pokéwalker følger ikke med. Et av de mest ettertraktede DS-spillene.' },
   { id: 'pokemon-platinum', tittel: 'Pokémon Platinum', type: 'ds', kat: ['ds', 'pokemon'], pris: 899, stand: 'Veldig god', region: 'PAL', innhold: 'Løs kassett', farge: '#8a8f99', label: 'PLATINUM',
@@ -207,7 +207,7 @@ function footer() {
     <div class="wrap">
       <div class="footer__grid">
         <div><img src="assets/retrokiosken-logo-mork.svg" alt="Retrokiosken" width="475" height="96">
-          <p>Originale retrospill og håndholdte konsoller – sjekket for ekthet, rengjort og testet før de sendes.</p></div>
+          <p>Originale retrospill og håndholdte konsoller – sjekket for ekthet og prøvespilt før de sendes.</p></div>
         <div><h3>Butikken</h3><ul>
           <li><a href="spill.html">Alle varer</a></li><li><a href="spill.html?k=pokemon">Pokémon</a></li>
           <li><a href="spill.html?k=konsoll">Konsoller</a></li><li><a href="slik-tester-vi.html">Slik tester vi</a></li>
@@ -298,9 +298,9 @@ function produktside() {
   const hoved = p.kat.find((x) => x !== 'pokemon');
   const erSpill = ['gb', 'gbc', 'gba', 'ds'].includes(p.type);
   const sjekk = erSpill
-    ? ['Sjekket at kassetten er ekte (kretskort og etikett)', 'Testet på original maskinvare', p.batteri ? 'Nytt lagringsbatteri montert' : 'Lagring testet', 'Kontakter rengjort']
+    ? ['Sjekket for ekthet', 'Prøvespilt på ekte maskinvare', p.batteri ? 'Nytt lagringsbatteri' : 'Lagring testet']
     : p.type.startsWith('konsoll')
-      ? ['Alle knapper, lyd og skjerm testet', 'Rengjort innvendig og utvendig', 'Batteri/strøm testet']
+      ? ['Sjekket for ekthet', 'Prøvespilt – knapper, lyd og skjerm', 'Batteri og lading testet']
       : ['Ny vare', 'Kontrollert før sending'];
   document.getElementById('produkt').innerHTML = `
     <nav class="brodsmuler" aria-label="Brødsmuler"><a href="index.html">Forside</a> / <a href="spill.html?k=${hoved}">${KATEGORIER[hoved]}</a> / ${esc(p.tittel)}</nav>
