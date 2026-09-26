@@ -51,6 +51,20 @@ const PRODUKTER = [
     tekst: 'Klappbar håndholdt i klassisk stil fra Anbernic, med 3,5" IPS-skjerm og god batteritid. Selges uten forhåndsinstallerte spill.' },
   { id: 'miyoo-mini-plus', tittel: 'Miyoo Mini Plus', type: 'konsoll-gbc', kat: ['konsoll'], pris: 899, stand: 'Ny', region: '–', innhold: 'Konsoll, USB-C-kabel', farge: '#d9d9de', label: '',
     tekst: 'Liten og lett håndholdt fra Miyoo med lang batteritid – passer i lomma. Selges uten forhåndsinstallerte spill.' },
+  { id: 'usb-lader', tittel: 'USB-lader 5 V / 2 A', type: 'lader', kat: ['tilbehor'], pris: 79, stand: 'Ny', region: '–', innhold: 'Lader', farge: '#f5f3ee', label: '',
+    tekst: 'Enkel USB-A-vegglader som passer til de fleste håndholdte konsoller. Fin å ta med – de fleste nye håndholdte leveres uten lader.' },
+  { id: 'lader-3ds', tittel: 'Lader til 3DS / 2DS / DSi', type: 'lader', kat: ['tilbehor', 'ds'], pris: 139, stand: 'Ny', region: '–', innhold: 'Lader', farge: '#2b2b33', label: '',
+    tekst: 'Ny lader som passer Nintendo 3DS, 3DS XL, 2DS og DSi. Tredjepartsprodukt.' },
+  { id: 'lader-ds-lite', tittel: 'Lader til Nintendo DS Lite', type: 'lader', kat: ['tilbehor', 'ds'], pris: 139, stand: 'Ny', region: '–', innhold: 'Lader', farge: '#e9e9ec', label: '',
+    tekst: 'Ny lader som passer Nintendo DS Lite. Tredjepartsprodukt.' },
+  { id: 'kabel-5i1', tittel: '5-i-1 USB-ladekabel for håndholdte', type: 'kabel', kat: ['tilbehor'], pris: 119, stand: 'Ny', region: '–', innhold: 'Kabel', farge: '#1e2340', label: '',
+    tekst: 'Én USB-kabel med fem kontakter som lader DS Lite, 3DS/2DS/DSi, GBA SP, Wii U GamePad og PSP. Kjekk på reise.' },
+  { id: 'stylus-3pk', tittel: 'Stylus-penner for DS og 3DS (3 stk.)', type: 'stylus', kat: ['tilbehor', 'ds'], pris: 69, stand: 'Ny', region: '–', innhold: '3 stk.', farge: '#d6352b', label: '',
+    tekst: 'Tre reservepenner i ulike farger. Passer i holderen på de fleste DS- og 3DS-modeller – skriv til oss hvis du er usikker på modellen din.' },
+  { id: 'skrutrekkersett', tittel: 'Skrutrekkersett for Nintendo-konsoller og kassetter', type: 'verktoy', kat: ['tilbehor'], pris: 129, stand: 'Ny', region: '–', innhold: 'Sett', farge: '#f2b632', label: '',
+    tekst: 'Med tri-wing- og 3,8 mm-bits som trengs for å åpne Game Boy-konsoller og spillkassetter – for eksempel for å bytte lagringsbatteri.' },
+  { id: 'veske-r36s', tittel: 'Beskyttelsesveske for håndholdte (R36S m.fl.)', type: 'etui', kat: ['tilbehor'], pris: 129, stand: 'Ny', region: '–', innhold: 'Veske', farge: '#1e2340', label: '',
+    tekst: 'Hard veske med glidelås og nettlomme til kabel og minnekort. Passer R36S og andre håndholdte i samme størrelse.' },
   { id: 'lader-gba-sp', tittel: 'Lader til GBA SP / DS', type: 'lader', kat: ['tilbehor'], pris: 149, stand: 'Ny', region: '–', innhold: 'Lader', farge: '#1e2340', label: '',
     tekst: 'Ny lader som passer Game Boy Advance SP og den første Nintendo DS-en.' },
   { id: 'etui-kassetter', tittel: 'Oppbevaringsetui for 12 kassetter', type: 'etui', kat: ['tilbehor'], pris: 99, stand: 'Ny', region: '–', innhold: 'Etui', farge: '#d6352b', label: '',
@@ -130,12 +144,28 @@ function produktSvg(p) {
         <circle cx="80" cy="140" r="11" fill="#0e1122"/><circle cx="80" cy="140" r="6" fill="#55556a"/>
         <circle cx="120" cy="140" r="11" fill="#0e1122"/><circle cx="120" cy="140" r="6" fill="#55556a"/>`;
       break;
+    case 'kabel':
+      art = `<rect x="84" y="34" width="32" height="22" rx="3" fill="#8a8f99" stroke="#1e2340" stroke-width="3"/>
+        <path d="M100 56V92" stroke="${p.farge}" stroke-width="7" fill="none"/>
+        <g stroke="${p.farge}" stroke-width="5" fill="none">${[40, 70, 100, 130, 160].map((x) => `<path d="M100 92Q${x} 110 ${x} 146"/>`).join('')}</g>
+        <g fill="#1e2340">${[40, 70, 100, 130, 160].map((x, i) => `<rect x="${x - 7}" y="146" width="14" height="${14 + (i % 2) * 4}" rx="2"/>`).join('')}</g>`;
+      break;
+    case 'stylus':
+      art = ['#d6352b', '#1e2340', '#f2b632'].map((c, i) =>
+        `<g transform="rotate(${-30 + i * 10} 100 100)"><rect x="${84 + i * 14}" y="30" width="8" height="130" rx="3" fill="${c}" stroke="#1e2340" stroke-width="2"/><path d="M${84 + i * 14} 160h8l-4 10z" fill="#1e2340"/></g>`).join('');
+      break;
+    case 'verktoy':
+      art = `<rect x="40" y="60" width="120" height="84" rx="8" fill="${p.farge}" stroke="#1e2340" stroke-width="3"/>
+        <g fill="#1e2340">${[0, 1, 2, 3, 4, 5].map((i) => `<rect x="${54 + i * 16}" y="76" width="8" height="30" rx="2"/>`).join('')}</g>
+        <rect x="60" y="116" width="80" height="14" rx="7" fill="#1e2340"/><rect x="132" y="119" width="30" height="8" fill="#8a8f99"/>
+        <path d="M168 123l-6-4v8z" fill="#8a8f99"/>`;
+      break;
     case 'lader':
       art = `<rect x="70" y="50" width="60" height="60" rx="8" fill="${p.farge}" stroke="#1e2340" stroke-width="3"/>
         <rect x="84" y="36" width="8" height="16" fill="#8a8f99"/><rect x="108" y="36" width="8" height="16" fill="#8a8f99"/>
         <path d="M100 110V140Q100 160 120 160H150" fill="none" stroke="#1e2340" stroke-width="6"/>
         <rect x="148" y="152" width="16" height="16" rx="2" fill="#1e2340"/>
-        <text x="100" y="86" text-anchor="middle" font-family="Pixelify Sans, monospace" font-size="16" fill="#f2b632">5V</text>`;
+        <text x="100" y="86" text-anchor="middle" font-family="Pixelify Sans, monospace" font-size="16" fill="#d6352b">5V</text>`;
       break;
     case 'etui':
       art = `<rect x="36" y="54" width="128" height="96" rx="14" fill="${p.farge}" stroke="#1e2340" stroke-width="3"/>
